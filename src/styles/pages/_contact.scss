@@ -1,0 +1,113 @@
+.form-wrap {
+    width: 85%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    margin-top: $spacing;
+    margin-bottom: $spacing;
+    border-radius: 4px;
+    box-shadow: $shadow;
+    @include breakpoint(medium) {
+      flex-direction: column;
+    }
+    & button {
+      width: 25%;
+      float: right;
+      margin-right: $spacing;
+      margin-top: $spacing;
+    }
+    &__info {
+      width: 35%;
+      background-color: $mainColor;
+      padding: $spacing;
+      @include breakpoint(medium) {
+        width: 100%;
+      }
+      & .heading {
+        margin-left: 0;
+      }
+    }
+  }
+  
+  form {
+    width: 65%;
+    margin-left: $spacing;
+    padding-bottom: $spacing;
+    @include breakpoint(medium) {
+      width: 95%;
+      margin-left: 0.5em;
+    }
+  }
+  .form-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $mainColor;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+    &__red {
+      border: 1px solid red;
+    }
+  }
+  
+  label {
+    font-family: "Helvetica Neue", sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    display: inline-block;
+    margin-top: 1em;
+  }
+  
+  /* Style the submit button */
+  input[type="submit"] {
+    background-color: $mainColor;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    @include transition;
+    @include basic-hover;
+  }
+  
+  /* Floating column for inputs: 75% width */
+  .col-75 {
+    float: left;
+    width: 95%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25,
+    .col-75,
+    input[type="submit"] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  
+  .errorMsg {
+    color: red;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+  .successMsg {
+    color: $mainColor;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 0.8em;
+    margin: 0;
+    padding: 0;
+  }
+  

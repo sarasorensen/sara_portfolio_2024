@@ -1,0 +1,54 @@
+.input-group {
+  margin-top: $inset;
+  margin-bottom: $inset;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  & input {
+    flex: 1;
+    color: white;
+    background-color: transparent;
+    width: 100%;
+    padding: 12px;
+    padding-left: 1px;
+    box-sizing: border-box;
+    resize: vertical;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    @include transition;
+    &::placeholder {
+      color: white;
+      opacity: 0.5;
+      @include transition;
+    }
+    &:focus {
+      border-bottom: 1px solid $accentColor2;
+      &::placeholder {
+        opacity: 0;
+      }
+    }
+  }
+}
+.input-group button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  margin-left: $inset;
+  &:disabled{
+    cursor: not-allowed;
+  }
+}
+.valid-input {
+  color: $accentColor2 !important;
+}
+div[data-lastpass-icon-root] {
+  display: none;
+}
+div[data-lastpass-root] {
+  display: none;
+}
+.warning-input {
+  border: 1px solid red;
+}

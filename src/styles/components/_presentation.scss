@@ -1,0 +1,37 @@
+.presentation {
+  width: 100%;
+  background-color: white;
+  padding: $spacing;
+  padding-top: 5em;
+  padding-bottom: 5em;
+  &__content {
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    @include breakpoint(medium) {
+      width: 100%;
+    }
+    &--icons {
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.profileimg {
+  width: 35%;
+  margin-left: $spacing;
+  transform: scaleX(-1);
+}
+
+.descr {
+  text-transform: initial;
+  margin-top: -$inset;
+  & i {
+    color: $accentColor;
+    font-weight: 500;
+  }
+}

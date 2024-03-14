@@ -1,0 +1,59 @@
+@mixin transition {
+  transition: 0.3s ease-in-out 0s;
+  -moz-transition: 0.3s ease-in-out 0s;
+  -webkit-transition: 0.3s ease-in-out 0s;
+}
+
+@mixin basic-hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+@mixin main-click {
+  box-shadow: inset 0 0 0 0 $accentColor;
+  transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  &:hover {
+    color: #fff;
+    box-shadow: inset 200px 0 0 0 $accentColor;
+    @include basic-hover;
+  }
+}
+
+@mixin secondary-click {
+  &:hover {
+    opacity: 0.7;
+    @include basic-hover;
+  }
+}
+
+@mixin navigation-link {
+  font-size: 1.6em;
+  color: white;
+  padding: $inset;
+  display: block;
+  min-width: 100%;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+}
+
+@mixin breakpoint($point) {
+  @if $point == small {
+    @media (max-width: 500px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (max-width: 790px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  } @else if $point == wide {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  } @else {
+    @warn 'Not a valid breakpoint name.';
+  }
+}

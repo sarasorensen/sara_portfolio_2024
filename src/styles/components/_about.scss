@@ -1,0 +1,23 @@
+.about {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  @include breakpoint(large) {
+    width: 70%;
+  }
+  @include breakpoint(medium) {
+    flex-direction: column;
+    width: 100%;
+  }
+}
+.code {
+  font-size: 5em;
+  background-color: $accentColor2;
+  color: white;
+  padding: $inset;
+  margin-right: $inset;
+  cursor: pointer;
+}

@@ -1,0 +1,105 @@
+.footer-wrap {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background-color: $mainColor;
+  color: white;
+  padding: $spacing;
+  @include breakpoint(medium) {
+    flex-direction: column;
+  }
+  & .icons {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(medium) {
+      justify-content: center;
+      width: 100%;
+    }
+  }
+  & h3 {
+    margin-bottom: -0.5em;
+  }
+}
+.footer-left {
+  width: 18%;
+  margin-left: 0;
+  height: fit-content;
+  @include breakpoint(large) {
+    width: 25%;
+  }
+  @include breakpoint(medium) {
+    text-align: center;
+    width: 100%;
+  }
+}
+.icon-footer {
+  color: white !important;
+  :hover {
+    color: white !important;
+  }
+}
+.footer-right {
+  width: 30%;
+  border-left: 1px solid #cccccc29;
+  padding: $inset;
+  padding-left: $spacing;
+  height: 100px;
+  @include breakpoint(large) {
+    width: 50%;
+  }
+  @include breakpoint(medium) {
+    width: 100%;
+    border-left: none;
+  }
+}
+.footer-bottom {
+  display: block;
+  width: 100%;
+  background-color: white;
+  height: auto;
+  padding: $inset;
+}
+.footer-back-to-top {
+  width: 100%;
+  text-align: center;
+  padding: $inset;
+  & button {
+    background-color: transparent;
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    font-weight: 800;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: none;
+    outline: none;
+    @include transition;
+    cursor: pointer;
+  }
+}
+.footer-bottom nav {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-bottom nav ul {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.footer-bottom nav a {
+  @include navigation-link;
+  color: $mainColor;
+  @include secondary-click;
+  font-size: 0.8em;
+}

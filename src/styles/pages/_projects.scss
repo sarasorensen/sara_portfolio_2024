@@ -1,0 +1,44 @@
+.projects{
+    background-color: white;
+    margin-bottom: $spacing;
+}
+.project {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 1em;
+  margin-bottom: 1.5em;
+  @include breakpoint(small) {
+    width: 95% !important;
+    margin: 0 auto;
+    margin-bottom: 1.5em;
+  }
+  @include breakpoint(medium) {
+    width: 45%;
+  }
+  & h4{
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  & img {
+    width: 100%;
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+.img-wrap {
+  height: 170px;
+  padding-bottom: 1em;
+  display: flex;
+  align-content: center;
+}
+.title-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 10px;
+    border-radius: 5px;
+  }
